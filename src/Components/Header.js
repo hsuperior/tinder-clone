@@ -8,7 +8,10 @@ function Header() {
     // BEM <<<<<<
     <div className="header">
       <PersonIcon />
-      <h2>I am a Header</h2>
+      <img
+        src="https://cdn.designrush.com/uploads/inspirations/2354/crop_683_410__1513706350_604_tin.png"
+        alt="tinder logo"
+      />
       <ForumIcon />
     </div>
   );
