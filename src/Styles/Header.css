@@ -1,0 +1,5 @@
+.header {
+  /** Flex Box*/
+  display: flex;
+  justify-content: space-between;
+}
