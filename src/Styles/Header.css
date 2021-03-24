@@ -5,7 +5,11 @@
 }
 
 .header__logo {
-  height: 50px;
+  height: 80px;
   width: 80px;
   object-fit: contain; /** This keeps the aspect ratio, helps with the "look" */
+}
+
+.header__icon {
+  padding: 20px;
 }

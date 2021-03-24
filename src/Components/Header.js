@@ -7,13 +7,13 @@ function Header() {
   return (
     // BEM <<<<<<
     <div className="header">
-      <PersonIcon />
+      <PersonIcon className="header__icon" fontSize="large" />
       <img
         className="header__logo"
         src="https://cdn.designrush.com/uploads/inspirations/2354/crop_683_410__1513706350_604_tin.png"
         alt="tinder logo"
       />
-      <ForumIcon />
+      <ForumIcon className="header__icon" fontSize="large" />
     </div>
   );
 }
