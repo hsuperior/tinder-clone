@@ -9,6 +9,7 @@ function Header() {
     <div className="header">
       <PersonIcon />
       <img
+        className="header__logo"
         src="https://cdn.designrush.com/uploads/inspirations/2354/crop_683_410__1513706350_604_tin.png"
         alt="tinder logo"
       />

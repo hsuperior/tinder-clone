@@ -3,3 +3,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.header__logo {
+  height: 50px;
+  width: 80px;
+  object-fit: contain; /** This keeps the aspect ratio, helps with the "look" */
+}
