@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TinderCard from "react-tinder-card";
-
+import "../Styles/TinderCards.css";
 const TinderCards = () => {
   // Declaring a variable the "React Way"
   const [people, setPeople] = useState([
