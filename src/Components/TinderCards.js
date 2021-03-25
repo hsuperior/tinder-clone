@@ -7,11 +7,13 @@ const TinderCards = () => {
     {
       name: "Bill Gates",
       // Image Url
-      url: "",
+      url:
+        "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg",
     },
     {
       name: "Mark Zuckerburg",
-      url: "",
+      url:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
     },
   ]);
 
