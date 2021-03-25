@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TinderCard from "react-tinder-card";
 import "../Styles/TinderCards.css";
+
 const TinderCards = () => {
   // Declaring a variable the "React Way"
   const [people, setPeople] = useState([
@@ -26,22 +27,23 @@ const TinderCards = () => {
   return (
     <div>
       <h1>Tinder Cards</h1>
-
-      {people.map((person) => (
-        <TinderCard
-          className="swipe"
-          // The key is important because it allows React to efficiently re-render a list; helps with app speed
-          key={person.name}
-          preventSwipe={["up", "down"]}
-        >
-          <div
-            style={{ backgroundImage: `url(${person.url})` }}
-            className="card"
+      <div className="tinderCards__cardContainer">
+        {people.map((person) => (
+          <TinderCard
+            className="swipe"
+            // The key is important because it allows React to efficiently re-render a list; helps with app speed
+            key={person.name}
+            preventSwipe={["up", "down"]}
           >
-            <h3>{person.name}</h3>
-          </div>
-        </TinderCard>
-      ))}
+            <div
+              style={{ backgroundImage: `url(${person.url})` }}
+              className="card"
+            >
+              <h3>{person.name}</h3>
+            </div>
+          </TinderCard>
+        ))}
+      </div>
     </div>
   );
 };
