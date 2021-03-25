@@ -28,7 +28,12 @@ const TinderCards = () => {
       <h1>Tinder Cards</h1>
 
       {people.map((person) => (
-        <TinderCard>
+        <TinderCard
+          className="swipe"
+          // The key is important because it allows React to efficiently re-render a list; helps with app speed
+          key={person.name}
+          preventSwipe={["up", "down"]}
+        >
           <div
             style={{ backgroundImage: `url(${person.url})` }}
             className="card"
