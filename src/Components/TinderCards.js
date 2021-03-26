@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
+import database from "../firebase";
 import "../Styles/TinderCards.css";
 
 const TinderCards = () => {
   // Declaring a variable the "React Way"
-  const [people, setPeople] = useState([
-    {
-      name: "Bill Gates",
-      // Image Url
-      url:
-        "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg",
-    },
-    {
-      name: "Mark Zuckerburg",
-      url:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
-    },
-  ]);
+  const [people, setPeople] = useState([]);
+
+  // Piece of code which runs based on a condition
+  useEffect(() => {
+    // Run stuff here
+    database.collection("people").onSnapshot((snapshot) => {
+      // Let's shuffle the docs
+      let unshuffledTinderPeople = snapshot.docs;
+      let tinderPeople = unshuffledTinderPeople
+        .map((a) => ({ sort: Math.random(), value: a })) // sort is a random key
+        .sort((a, b) => a.sort - b.sort) // sorts in place
+        .map((a) => a.value); // create new array of just the values
+      setPeople(tinderPeople.map((doc) => doc.data()));
+    });
+
+    // this will run once when the component loads, and never again
+  }, []);
 
   /** Not the React way, don't do this */
   // const people = []; <== same as above
@@ -27,6 +32,7 @@ const TinderCards = () => {
   return (
     <div>
       <h1>Tinder Cards</h1>
+
       <div className="tinderCards__cardContainer">
         {people.map((person) => (
           <TinderCard
