@@ -10,7 +10,8 @@ const TinderCards = () => {
   // Piece of code which runs based on a condition
   useEffect(() => {
     // Run stuff here
-    database.collection("people").onSnapshot((snapshot) => {
+
+    const unsubscribe = database.collection("people").onSnapshot((snapshot) => {
       // Let's shuffle the docs
       let unshuffledTinderPeople = snapshot.docs;
       let tinderPeople = unshuffledTinderPeople
@@ -19,6 +20,11 @@ const TinderCards = () => {
         .map((a) => a.value); // create new array of just the values
       setPeople(tinderPeople.map((doc) => doc.data()));
     });
+
+    return () => {
+      // Clean up
+      unsubscribe();
+    };
 
     // this will run once when the component loads, and never again
   }, []);
@@ -31,8 +37,6 @@ const TinderCards = () => {
   // setPeople([...people, 'person1', 'person2'])
   return (
     <div>
-      <h1>Tinder Cards</h1>
-
       <div className="tinderCards__cardContainer">
         {people.map((person) => (
           <TinderCard
