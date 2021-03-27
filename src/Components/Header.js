@@ -4,9 +4,11 @@ import PersonIcon from "@material-ui/icons/Person";
 import ForumIcon from "@material-ui/icons/Forum";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Header({ backButton }) {
+  // useHistory grabs the history of current session
+  const history = useHistory();
   return (
     // BEM <<<<<<
     <div className="header">
