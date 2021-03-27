@@ -9,11 +9,12 @@ import { Link, useHistory } from "react-router-dom";
 function Header({ backButton }) {
   // useHistory grabs the history of current session
   const history = useHistory();
+
   return (
     // BEM <<<<<<
     <div className="header">
       {backButton ? (
-        <IconButton>
+        <IconButton onClick={() => history.goBack()}>
           <ArrowBackIosIcon fontSize="large" className="header__icon" />
         </IconButton>
       ) : (
