@@ -1,0 +1,28 @@
+{
+  "chats": [
+    {
+      "name": "Selena",
+      "message": "Hello",
+      "timestamp": "35 minutes ago",
+      "profilePic": "https://upload.wikimedia.org/wikipedia/commons/e/ed/191125_Selena_Gomez_at_the_2019_American_Music_Awards_%28cropped%29.png"
+    },
+    {
+      "name": "Channing",
+      "message": "My name Jeff",
+      "timestamp": "2 hours ago",
+      "profilePic": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Channing_Tatum_July_2015.jpg"
+    },
+    {
+      "name": "Arnold",
+      "message": "I'll be back",
+      "timestamp": "2 days ago",
+      "profilePic": "https://upload.wikimedia.org/wikipedia/commons/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg"
+    },
+    {
+      "name": "Johnny",
+      "message": "That's badass",
+      "timestamp": "3 weeks ago",
+      "profilePic": "https://www.danezon.com/wp-content/uploads/2021/01/Cobra-Kai-Johnny-Lawrence-Blazer.jpg"
+    }
+  ]
+}
