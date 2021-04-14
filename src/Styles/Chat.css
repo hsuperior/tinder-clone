@@ -7,6 +7,11 @@
   border-bottom: 1px solid #fafafa;
 }
 
+a {
+  text-decoration: none; /* Gets rid of underline */
+  color: inherit; /* Gets rid of blue */
+}
+
 .chat__details {
   flex: 1;
   /* padding: 20px; */
