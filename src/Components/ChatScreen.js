@@ -1,8 +1,23 @@
 import { Avatar } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../Styles/ChatScreen.css";
 
-const ChatScreen = ({ name }) => {
+const ChatScreen = () => {
+  const [name, setName] = useState("");
+
+  const getName = () => {
+    let location = window.location.pathname;
+    let urlElements = location.split("/");
+    let nameInPath = urlElements[2];
+    setName(nameInPath);
+  };
+
+  useEffect(() => {
+    getName();
+  }, []);
+
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
       name: "Selena",
@@ -20,6 +35,13 @@ const ChatScreen = ({ name }) => {
       message: "Nice",
     },
   ]);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+
+    setMessages([...messages, { message: input }]);
+    setInput("");
+  };
 
   return (
     <div className="chatScreen">
@@ -42,6 +64,23 @@ const ChatScreen = ({ name }) => {
           </div>
         )
       )}
+
+      <form className="chatScreen__input">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="chatScreen__inputField"
+          placeholder="Type a message..."
+          type="text"
+        />
+        <button
+          onClick={handleSend}
+          type="submit"
+          className="chatScreen__inputButton"
+        >
+          SEND
+        </button>
+      </form>
     </div>
   );
 };
